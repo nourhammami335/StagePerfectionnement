@@ -1,0 +1,61 @@
+/* alert-counter.component.css */
+.alert-counter {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* .container{
+background-color: white;
+} */
+h1 {
+  text-align: center;
+}
+
+.body {
+  background-image: url('C:/Users/user/ProjetAngular/public/parking.jpg');
+  height: 800px;
+  background-size: cover; 
+  background-position: center; 
+}
+
+/* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+  .badge {
+      padding: 4px 8px; /* Réduire le padding pour les petits écrans */
+      font-size: 10px; /* Réduire la taille de la police pour les petits écrans */
+  }
+
+  h1 {
+      font-size: 1.5em; /* Réduire la taille de la police pour les petits écrans */
+  }
+
+  .body {
+      height: auto; /* Permet à la hauteur de s'ajuster sur les petits écrans */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .badge {
+      padding: 3px 6px; /* Réduire encore le padding pour les très petits écrans */
+      font-size: 9px; /* Réduire encore la taille de la police pour les très petits écrans */
+  }
+
+  h1 {
+      font-size: 1.2em; /* Réduire encore la taille de la police pour les très petits écrans */
+  }
+
+  .body {
+      height: auto; /* Permet à la hauteur de s'ajuster sur les très petits écrans */
+  }
+}

@@ -1,0 +1,55 @@
+<!-- alert-counter.component.html -->
+<!-- <div class="alert-counter">
+    <span class="badge">{{ panneCount }}</span>
+    <img src="path/to/your/icon.png" alt="Alert Icon" />
+  </div> -->
+  <i class="bi bi-house"   (click)="naviguerVersHome()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </svg></i>
+<h1>Liste des reclamations</h1>
+<div class="body">
+<!-- <ul>
+    @for( p of pannes ;track $index){
+    <li>
+    {{p.nom}}-{{p.prenom}}--{{p.email}}--{{p.immatriculation}}--{{p.description}}--{{p.datePanne| date}}
+    <button (click)="deletePanne(p.id)">Supprimer</button>
+    <button (click)="updateStatut(p.id, 'traitée')">Panne Traitée</button>
+    <button (click)="updateStatut(p.id, 'en cours')">Panne En Cours</button>
+    </li>}
+</ul> -->
+<!-- <div class="container"> -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>NOM</th>
+      <th>PRENOM</th>
+      <th>EMAIL</th>
+      <th>IMMATRICULATION</th>
+      <th>DESCRIPTION</th>
+      <th>DATEPANNE</th>
+      <th>Supprimer</th>
+      <th> Determiner l'etat du panne</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for( p of pannes ;track $index){
+    <tr>
+      <td>{{p.nom}}</td>
+      <td>{{p.prenom}}</td>
+      <td>{{p.email}}</td>
+      <td>{{p.immatriculation}}</td>
+      <td>{{p.description}}</td>
+      <td>{{p.datePanne| date}}</td>
+      <td> <button (click)="deletePanne(p.id)">Supprimer</button></td>
+      <td> <button (click)="updateStatut(p.id, 'traitée')">Panne Traitée</button> &nbsp; 
+       <button (click)="updateStatut(p.id, 'en cours')">Panne En Cours</button></td>
+    </tr>
+  }
+
+  </tbody>
+
+</table>
+<!-- </div> -->
+</div>

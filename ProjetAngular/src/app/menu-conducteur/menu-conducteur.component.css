@@ -1,0 +1,90 @@
+.square {
+  width: 250px; /* Largeur par défaut */
+  height: 250px; /* Hauteur par défaut */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.square1 { background-color: rgb(46, 44, 44); }
+.square2 { background-color: rgb(67, 66, 66); }
+.square3 { background-color: gray; }
+.square4 { background-color: rgb(178, 176, 176); }
+
+.size {
+  width: 50px;
+  height: 50px;
+}
+
+.body {
+  background-image: url('C:/Users/user/ProjetAngular/public/parking.jpg');
+  height: 900px;
+}
+
+.square:hover {
+  opacity: 0.5;
+}
+
+h1 {
+  margin-top: 20px;
+  color: antiquewhite;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50px;
+}
+
+.log {
+  height: 100px;
+  width: 100px;
+  background-color: antiquewhite;
+  margin-top: 10px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+  .square {
+    width: 80%; /* Utiliser 80% de la largeur de l'écran */
+    height: auto; /* Hauteur automatique pour garder le ratio */
+    font-size: 20px; /* Réduire la taille de la police */
+  }
+
+  img {
+    height: 150px; /* Ajuster la taille de l'image */
+    width: 150px; /* Ajuster la taille de l'image */
+  }
+
+  .box {
+    flex-direction: column; /* Changer la direction pour les petits écrans */
+    align-items: center; /* Centrer les éléments */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .square {
+    width: 90%; /* Utiliser 90% de la largeur de l'écran */
+    height: auto; /* Hauteur automatique pour garder le ratio */
+    font-size: 18px; /* Réduire encore la taille de la police */
+  }
+
+  img {
+    height: 100px; /* Ajuster la taille de l'image */
+    width: 100px; /* Ajuster la taille de l'image */
+  }
+
+  h1 {
+    font-size: 18px; /* Réduire la taille du titre */
+  }
+}

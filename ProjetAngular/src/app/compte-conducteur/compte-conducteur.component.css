@@ -1,0 +1,91 @@
+/* .box{
+    display:flex;
+    justify-content: center;
+}
+.box1{
+    margin-bottom: 20px;
+} */
+
+.body {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-image: url('C:/Users/user/ProjetAngular/public/parking.jpg'); /* Couleur de fond (optionnel) */
+}
+.pos {
+    position: relative;
+    bottom: 100px;
+    right: 810px;
+}
+h1 {
+    color: white;
+}
+.box {
+    display: flex; /* Utilise flexbox pour aligner les éléments */
+    align-items: center; /* Aligne les éléments au centre verticalement */
+    margin-top: 20px; /* Espace au-dessus de la boîte */
+}
+
+.box1 {
+    margin-right: 20px;
+    border: 2px solid grey;
+    background-color: rgb(236, 233, 233); /* Espace entre l'icône et le tableau */
+}
+
+.table {
+    margin: 0; /* Supprime les marges par défaut du tableau */
+    width: auto; /* Ajuste la largeur du tableau */
+    max-width: 400px; /* Limite la largeur maximale du tableau */
+    border-collapse: collapse; /* Fusionne les bordures des cellules */
+}
+
+.table td {
+    padding: 10px; /* Ajoute de l'espace à l'intérieur des cellules */
+}
+
+.table th {
+    text-align: left; /* Aligne le texte à gauche dans les en-têtes */
+}
+
+/* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+    .body {
+        height: auto; /* Permet à la hauteur de s'ajuster sur les petits écrans */
+        padding: 20px; /* Ajout de padding pour un meilleur espacement */
+    }
+
+    .pos {
+        right: 0; /* Ajuster la position pour les petits écrans */
+        bottom: 50px; /* Ajuster la position pour les petits écrans */
+    }
+
+    h1 {
+        font-size: 2rem; /* Réduire la taille de la police pour les écrans plus petits */
+    }
+
+    .box {
+        flex-direction: column; /* Aligne les éléments en colonne sur les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+
+    .box1 {
+        margin-right: 0; /* Supprime la marge droite sur les petits écrans */
+        margin-bottom: 10px; /* Ajoute une marge en bas pour l'espacement */
+    }
+
+    .table {
+        max-width: 100%; /* Permet au tableau de s'étendre à 100% de la largeur */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Réduire encore la taille de la police pour les très petits écrans */
+    }
+
+    .pos {
+        bottom: 30px; /* Ajuster la position pour les très petits écrans */
+    }
+}

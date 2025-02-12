@@ -1,0 +1,58 @@
+<i class="bi bi-house">
+    <svg (click)="naviguerVersConducteur()" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+    </svg> 
+</i>
+<div class="body">
+<div class="container d-flex justify-content-center align-items-center  form-container SizeBorder rounded" >
+    <div class=" "> 
+        <h2 class="text-center">
+            <i class="bi bi-plus-circle-fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill size" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>
+            </i> 
+            &nbsp; Modifier un conducteur
+        </h2>
+        <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group" >
+                <label for="numero">Numéro:</label>
+                <input type="text" formControlName="numero" class="form-control" id="numero">
+                @if(numero?.invalid && numero?.touched){
+                    <div class="alert alert-danger">
+                        Le numero est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+            <div class="form-group">
+                <label for="login">login:</label>
+                <input class="form-control" formControlName="login" id="login" placeholder="Entrez le login du conducteur">
+                @if(login?.invalid && login?.touched){
+                    <div class="alert alert-danger">
+                        le login est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+         
+            <div class="form-group">
+                <label for="motdepasse">motdepasse:</label>
+                <input class="form-control" formControlName="motdepasse" id="motdepasse" placeholder="Entrez le adresse du conducteur">
+                @if(motdepasse?.invalid && motdepasse?.touched){
+                    <div class="alert alert-danger">
+                        le motdepasse est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+           
+          
+         
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" [disabled]="modifyForm.invalid">Soumettre</button>
+            </div>
+        </form>
+    </div>
+      <!-- numero:string,public nom: string,public  prenom: string,public age: number,public sexe: string,public email: string,public adresse: string,public departement:string,public login:string,public motdepasse:string -->
+</div>
+
+
+</div>

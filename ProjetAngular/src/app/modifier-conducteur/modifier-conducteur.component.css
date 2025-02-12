@@ -1,0 +1,52 @@
+
+.form-container {
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+  margin:40px;
+  }
+  .size{
+    width:50px;
+    height: 50px;
+  }
+  .SizeBorder{
+    width: 600px;
+    height: 600px;
+    border: 2px solid black;
+    background-color: white;
+    margin-left: 500px;
+  }
+  .body {
+    background-image: url('C:/Users/user/ProjetAngular/public/parking.jpg');
+    height: 1000px;
+    background-size: cover; /* Assure que l'image de fond couvre tout l'écran */
+    background-position: center; /* Centre l'image de fond */
+  }
+
+
+  /* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+  .SizeBorder {
+      width: 90%; /* Utiliser 90% de la largeur de l'écran */
+      height: auto; /* Hauteur automatique pour garder le ratio */
+      margin: 20px auto; /* Centrer avec une marge */
+  }
+
+  .size {
+      width: 40px; /* Réduire la taille pour les petits écrans */
+      height: 40px; /* Réduire la taille pour les petits écrans */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .SizeBorder {
+      width: 95%; /* Utiliser 95% de la largeur de l'écran */
+      height: auto; /* Hauteur automatique pour garder le ratio */
+      margin: 10px auto; /* Réduire la marge pour les petits écrans */
+  }
+
+  .size {
+      width: 30px; /* Réduire encore la taille pour les très petits écrans */
+      height: 30px; /* Réduire encore la taille pour les très petits écrans */
+  }
+}

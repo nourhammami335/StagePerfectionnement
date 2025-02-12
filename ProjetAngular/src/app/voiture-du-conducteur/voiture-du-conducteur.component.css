@@ -1,0 +1,118 @@
+.body {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    height: 100vh; 
+    background-image: url('C:/Users/user/ProjetAngular/public/parking.jpg'); /* Couleur de fond (optionnel) */
+    position: relative; /* Ajouté pour que les éléments enfants en position absolue soient positionnés par rapport à ce conteneur */
+}
+
+.pos {
+    position: absolute; /* Changez à absolute pour positionner par rapport à la fenêtre */
+    top: 20px; /* Ajustez cette valeur pour la distance du haut */
+    left: 20px; /* Ajustez cette valeur pour la distance de la gauche */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
+
+h1 {
+    color: white;
+    font-size: 2.5em; /* Augmente la taille du titre */
+}
+
+.box {
+    display: flex; /* Utilise flexbox pour aligner les éléments */
+    align-items: center; /* Aligne les éléments au centre verticalement */
+    margin-top: 20px; /* Espace au-dessus de la boîte */
+}
+
+.box1 {
+    margin-right: 20px;
+    border: 2px solid grey;
+    background-color: rgb(236, 233, 233); /* Espace entre l'icône et le tableau */
+    padding: 20px; /* Ajoute de l'espace à l'intérieur de la boîte */
+    width: 350px; 
+    height: 400px; /* Ajuste la hauteur de la boîte */
+}
+
+.box2 {
+    margin-right: 20px;
+    padding: 20px; /* Ajoute de l'espace à l'intérieur de la boîte */
+    width: 350px;
+}
+
+.bi-car-front-fill {
+    width: 300px; /* Augmente la largeur de l'icône de voiture */
+    height: auto; /* Garde le ratio d'aspect */
+}
+
+.table {
+    margin: 0; /* Supprime les marges par défaut du tableau */
+    width: 400px; /* Ajuste la largeur du tableau */
+    height: 400px; /* Ajuste la hauteur du tableau */
+    max-width: 600px; /* Augmente la largeur maximale du tableau */
+    border-collapse: collapse; /* Fusionne les bordures des cellules */
+}
+
+.table td {
+    padding: 15px; /* Augmente l'espace à l'intérieur des cellules */
+    font-size: 1.2em; /* Augmente la taille de la police */
+}
+
+.table th {
+    text-align: left; /* Aligne le texte à gauche dans les en-têtes */
+    font-size: 1.2em; /* Augmente la taille de la police des en-têtes */
+}
+
+/* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+    .body {
+        height: auto; /* Permet à la hauteur de s'ajuster sur les petits écrans */
+        padding: 20px; /* Ajout de padding pour un meilleur espacement */
+    }
+
+    .pos {
+        top: 10px; /* Ajuster la position pour les petits écrans */
+        left: 10px; /* Ajuster la position pour les petits écrans */
+    }
+
+    h1 {
+        font-size: 2em; /* Réduire la taille de la police pour les écrans plus petits */
+    }
+
+    .box {
+        flex-direction: column; /* Aligne les éléments en colonne sur les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+    }
+
+    .box1, .box2 {
+        width: 90%; /* Utiliser 90% de la largeur de l'écran */
+        margin-right: 0; /* Supprime la marge droite sur les petits écrans */
+        margin-bottom: 10px; /* Ajoute une marge en bas pour l'espacement */
+    }
+
+    .table {
+        width: 100%; /* Permet au tableau de s'étendre à 100% de la largeur */
+        max-width: 100%; /* Limite la largeur maximale du tableau à 100% */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Réduire encore la taille de la police pour les très petits écrans */
+    }
+
+    .pos {
+        top: 5px; /* Ajuster la position pour les très petits écrans */
+        left: 5px; /* Ajuster la position pour les très petits écrans */
+    }
+
+ .box1, .box2 {
+        height: auto; /* Ajuste la hauteur des boîtes pour les très petits écrans */
+    }
+
+    .table td, .table th {
+        font-size: 1em; /* Réduit la taille de la police pour les très petits écrans */
+        padding: 10px; /* Réduit l'espace à l'intérieur des cellules */
+    }
+}

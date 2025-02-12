@@ -1,0 +1,44 @@
+
+<i class="bi bi-house" (click)="naviguerVersHome()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+    </svg>
+</i>
+<h1>Voici la resultat de votre recherche</h1>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th >Numero</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Age</th>
+        <th>Sexe</th>
+        <th>Email</th>
+        <th>Adresse</th>
+        <th>Departement</th>
+        <th>Login</th>
+        <th>Motdepasse </th>
+      
+    </tr>
+  </thead>
+    <tbody>
+      @for(conducteur of filteredConducteurs;track $index){
+          <tr>
+            <td >{{ conducteur.numero }}</td>
+            <td>{{ conducteur.nom }}</td>
+            <td>{{ conducteur.prenom }}</td>
+            <td>{{ conducteur.age }}</td>
+            <td>{{ conducteur.sexe }}</td>
+            <td>{{ conducteur.email }}</td>
+            <td>{{ conducteur.adresse }}</td>
+            <td>{{ conducteur.departement }}</td>
+            <td>{{ conducteur.login }}</td>
+            <td>{{ conducteur.motdepasse }}</td>
+  </tr>}
+@if(filteredConducteurs.length === 0){
+  <h2>Aucun conducteur trouvé</h2>
+}
+   
+ 
+  </tbody>
+  </table>

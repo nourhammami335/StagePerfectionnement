@@ -1,0 +1,121 @@
+
+<div class="body">
+<i class="bi bi-house" (click)="naviguerVersHome()">
+    <svg class="modif bi bi-house" xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor"  viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </svg>
+  </i>
+    <div class="form-container color">
+        <div class="container">
+            <h2 class="text-center"><i class="bi bi-wrench-adjustable-circle-fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench-adjustable-circle-fill size" viewBox="0 0 16 16">
+                <path d="M6.705 8.139a.25.25 0 0 0-.288-.376l-1.5.5.159.474.808-.27-.595.894a.25.25 0 0 0 .287.376l.808-.27-.595.894a.25.25 0 0 0 .287.376l1.5-.5-.159-.474-.808.27.596-.894a.25.25 0 0 0-.288-.376l-.808.27z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m-6.202-4.751 1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.5 4.5 0 0 1-1.592-.29L4.747 14.2a7.03 7.03 0 0 1-2.949-2.951M12.496 8a4.5 4.5 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11q.04.3.04.61"/>
+              </svg>
+            </i> &nbsp; Décrire une Panne</h2>
+            <form  [formGroup]="panneForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-group">
+                    <!-- <label for="nom">Nom:</label>
+                    <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Entrez votre nom" >
+                    @if(nom?.invalid && nom?.touched){
+                      <div class="alert alert-danger">
+                          le nom est champ obligatoire !!
+                      </div>
+                      }
+                </div>  -->
+
+                <label for="nom">Nom:</label>
+                 <select  formControlName="nom" class="form-control" id="nom" >
+                  <option value="" disabled selected>nom du conducteur</option>
+                  @for(c of conducteurs;track $index){
+                  <option [value]="c.nom">{{c.nom}}</option>}
+              </select>
+              @if(nom?.invalid && nom?.touched){
+                  <div class="alert alert-danger">
+                      Le nom est champ obligatoire !!
+                  </div>
+                  } </div>
+
+
+
+
+
+
+                  
+                <div class="form-group">
+                  <label for="prenom">Prenom:</label>
+                  <!-- <input type="text" formControlName="prenom" class="form-control" id="prenom" placeholder="Entrez votre prenom" > -->
+                  <select  formControlName="prenom" class="form-control" id="prenom" >
+                    <option value="" disabled selected>prenom du conducteur</option>
+                    @for(c of conducteurs;track $index){
+                    <option [value]="c.prenom">{{c.prenom}}</option>}
+                </select>
+                  @if(prenom?.invalid && prenom?.touched){
+                    <div class="alert alert-danger">
+                        le prenom est champ obligatoire !!
+                    </div>
+                    }
+              </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="Entrez votre email" >
+                    @if(email?.invalid && email?.touched){
+                      <div class="alert alert-danger">
+                          l'email est champ obligatoire !!
+                      </div>
+                      }
+                </div>
+
+                <!-- <div class="form-group">
+                  <label for="text">numero:</label>
+                  <input type="text" formControlName="numero" class="form-control" id="numero" placeholder="Entrez votre numero" >
+                  @if(numero?.invalid && numero?.touched){
+                    <div class="alert alert-danger">
+                        le numero est champ obligatoire !!
+                    </div>
+                    }
+              </div> -->
+
+                <div class="form-group">
+                    <label for="immatriculation">Véhicule:</label>
+                    <!-- <input type="text" formControlName="immatriculation" class="form-control" id="immatriculation" placeholder="Entrez l'immatriculation de votre véhicule" > -->
+                    <select  formControlName="immatriculation" class="form-control" id="immatriculation" >
+                      <option value="" disabled selected>immatriculation</option>
+                      @for(v of voitures;track $index){
+                      <option [value]="v.immatriculation">{{v.immatriculation}}</option>}
+                  </select>
+                    
+                    @if(immatriculation?.invalid && immatriculation?.touched){
+                      <div class="alert alert-danger">
+                          l'immatriculation est champ obligatoire !!
+                      </div>
+                      }
+                </div>
+                <div class="form-group">
+                    <label for="description">Description de la Panne:</label>
+                    <textarea formControlName="description" class="form-control" id="description" rows="4" placeholder="Décrivez la panne" ></textarea>
+                    @if(description?.invalid && description?.touched){
+                      <div class="alert alert-danger">
+                          la description est champ obligatoire !!
+                      </div>
+                      }
+                </div>
+                <div class="form-group">
+                    <label for="datePanne">Date de la Panne:</label>
+                    <input type="date" formControlName="datePanne"class="form-control" id="datePanne" >
+                    @if(datePanne?.invalid && datePanne?.touched){
+                      <div class="alert alert-danger">
+                          la datePanne est champ obligatoire !!
+                      </div>
+                      }
+                </div>
+                <br>
+                <div class="text-center">
+                  <button type="submit" class="btn" [disabled]="panneForm.invalid">Soumettre</button>
+              </div>
+            </form>
+        </div>
+    </div>
+
+  </div>

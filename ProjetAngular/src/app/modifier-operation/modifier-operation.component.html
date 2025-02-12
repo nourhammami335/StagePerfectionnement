@@ -1,0 +1,68 @@
+<i class="bi bi-house">
+    <svg  (click)="naviguerVersOperation()"  xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+    </svg> 
+    
+</i>
+<div class="body">
+
+<div class="container d-flex justify-content-center align-items-center  form-container SizeBorder rounded" >
+    <div class=" "> 
+        <h2 class="text-center">
+            <i class="bi bi-plus-circle-fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill size" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>
+            </i> 
+            &nbsp; Modifier operation
+        </h2>
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group" >
+                <label for="id">id:</label>
+                <input type="number" formControlName="id" class="form-control" id="id" placeholder="Entrez l'id"  >
+                @if(id?.invalid && id?.touched){
+                    <div class="alert alert-danger">
+                        La id est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+            <div class="form-group" >
+                <label for="dateVidange">dateVidange:</label>
+                <input type="date" formControlName="dateVidange" class="form-control" id="dateVidange" placeholder="Entrez votre dateVidange"  >
+                @if(dateVidange?.invalid && dateVidange?.touched){
+                    <div class="alert alert-danger">
+                        La dateVidange est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+            <div class="form-group">
+                <label for="dateAssurance">dateAssurance:</label>
+                <input type="date" class="form-control" formControlName="dateAssurance" id="dateAssurance" placeholder="Entrez la dateAssurance ">
+                @if(dateAssurance?.invalid && dateAssurance?.touched){
+                    <div class="alert alert-danger">
+                        la dateAssurance est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+         
+            <div class="form-group">
+                <label for="dateVisite">dateVisite:</label>
+                <input type="date" class="form-control" formControlName="dateVisite" id="dateVisite" placeholder="Entrez le dateVisite ">
+                @if(dateVisite?.invalid && dateVisite?.touched){
+                    <div class="alert alert-danger">
+                        le dateVisite est champ obligatoire !!
+                    </div>
+                    }
+            </div>
+           
+          
+         
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">Soumettre</button>
+            </div>
+        </form>
+    </div>
+      <!-- numero:string,public nom: string,public  prenom: string,public age: number,public sexe: string,public email: string,public adresse: string,public departement:string,public login:string,public motdepasse:string -->
+</div>
+
+</div>
